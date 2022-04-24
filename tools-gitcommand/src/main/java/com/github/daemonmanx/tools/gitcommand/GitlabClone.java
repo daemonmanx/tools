@@ -70,9 +70,6 @@ public class GitlabClone {
             Runtime runtime = Runtime.getRuntime();
             for (int i = 0; i < array.size(); i++) {
                 String full_path = array.getJSONObject(i).getJSONObject("namespace").getString("full_path");
-                if(full_path.contains("hengshan") || full_path.contains("lushan")) {
-                    continue;
-                }
                 //工作目录，命令输入/输出相对路径
                 File workDir = new File(ROOT_PATH + File.separator + full_path);
                 if(!workDir.exists()) {
